@@ -1,4 +1,4 @@
-# eGPS 2.1 (eGPS2) — Final Release Collection
+# eGPS v2 (eGPS2) — Final Release Collection
 
 This folder is the **final release workspace** for the eGPS2 software platform.
 
@@ -21,18 +21,18 @@ This repository area collects the core framework and a set of applications/tools
 - Launch eGPS2 using the provided launcher (double-click).
 
 Notes:
-- Some releases bundle Java. If you prefer DIY, download the **no-JRE** variant and configure your preferred JRE yourself.
+- Some releases bundle a Java runtime. If you choose the **no-JRE** variant, install a Java runtime that meets the requirements of that release.
 
 ## What is included here?
 
 Main stream modules (typical dependency order):
 
-- `egps-base`: base utilities and infrastructure
-- `egps-shell`: a publish/launcher wrapper; includes the GUI mainframe (**not open source**, but free to use)
+- `egps-base`: base utilities and infrastructure (open source)
+- `egps-shell`: the GUI shell framework hosting desktop modules, including the mainframe source code (open source)
 - `egps-pathway.evol.browser`: application module (Pathway Evolution Browser)
-- `egps-SeqTools`: another application module
+- `egps-SeqTools` (SeqTools): biological sequence analysis tools and workflow modules
 
-Their dependencies are roughly:
+Their dependencies are shown below. In both diagrams, arrows point from a base module to an upper-level module that depends on it:
 
 ```mermaid
 graph TD
@@ -64,14 +64,23 @@ Of course, you can also develop your own projects on top of the upper-level modu
 
 ## For developers (optional)
 
-If you need the source code of any module, please check the corresponding GitHub repository (the source code is publicly available where applicable).
+The project source code is open source and available in the corresponding GitHub repositories. See the documentation links below.
 
 You can import the projects into IntelliJ IDEA, Eclipse, or VS Code. We use IntelliJ IDEA by default. The `egps-shell` JAR is already included in the no-install release package; please add compile-time dependencies as needed for development.
 
 ## Documentation
 
-- Documentation (Yuque): https://www.yuque.com/u21499046/egpsdoc
-- Documentation (Yuque): https://www.yuque.com/u21499046/pathway.browser
+Usage instructions and development tutorials are available on GitHub:
+
+- [eGPS platform reference documentation](https://github.com/yudalang3/egps-shell/blob/main/docs/README_TableOfContents.md)
+- [Module and plugin development tutorials](https://github.com/yudalang3/egps-shell/blob/main/manuals/module_plugin_course/README.md)
+- [Pathway Evolution Browser usage guide](https://github.com/yudalang3/egps-pathway.evol.browser/blob/main/README.md)
+- [egps-SeqTools (SeqTools) module guide](https://github.com/yudalang3/egps-SeqTools/blob/main/README.md)
+
+Usage tutorials and development documentation are also available on Yuque:
+
+- [eGPS documentation (Yuque)](https://www.yuque.com/u21499046/egpsdoc)
+- [Pathway Browser documentation (Yuque)](https://www.yuque.com/u21499046/pathway.browser)
 
 ## License
 
