@@ -4,7 +4,7 @@ This folder is the **final release workspace** for the eGPS2 software platform.
 
 If you are an end user and not familiar with the terminal, you do **not** need to learn the internal modules or use the command line: just download the packaged release, unzip it, and double-click the launcher.
 
-Go to [Releases](https://github.com/yudalang3/eGPS_v2.1/releases) to download.
+Go to [Releases](https://github.com/yudalang3/eGPS_v2/releases) to download.
 
 [中文版 README](README_zh.md)
 
@@ -79,8 +79,9 @@ Usage instructions and development tutorials are available on GitHub:
 
 Usage tutorials and development documentation are also available on Yuque:
 
-- [eGPS documentation (Yuque)](https://www.yuque.com/u21499046/egpsdoc)
-- [Pathway Browser documentation (Yuque)](https://www.yuque.com/u21499046/pathway.browser)
+- [eGPS v2 Chinese User Manual (Yuque)](https://www.yuque.com/yudalang3/egpsdoc)
+- [Pathway Evolution Browser Chinese User Manual (Yuque)](https://www.yuque.com/yudalang3/pathway.browser)
+- [eGPS v2 English User Manual (Yuque)](https://www.yuque.com/yudalang3/egps2-english)
 
 ## License
 

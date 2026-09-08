@@ -4,7 +4,7 @@
 
 如果你是不熟悉命令行的普通用户，你不需要了解内部模块结构，也不需要使用命令行：只要下载打包好的发布版本，解压后双击启动即可。
 
-请前往 [Releases 页面](https://github.com/yudalang3/eGPS_v2.1/releases)下载发布版本。
+请前往 [Releases 页面](https://github.com/yudalang3/eGPS_v2/releases)下载发布版本。
 
 [English README](README.md)
 
@@ -79,8 +79,9 @@ graph TD
 
 也可以在语雀查看使用教程和开发文档：
 
-- [eGPS 在线文档（语雀）](https://www.yuque.com/u21499046/egpsdoc)
-- [Pathway Browser 在线文档（语雀）](https://www.yuque.com/u21499046/pathway.browser)
+- [eGPS v2 中文使用手册（语雀）](https://www.yuque.com/yudalang3/egpsdoc)
+- [eGPS-pathway.evol.browser 中文使用手册（语雀）](https://www.yuque.com/yudalang3/pathway.browser)
+- [eGPS v2 英文使用手册（语雀）](https://www.yuque.com/yudalang3/egps2-english)
 
 ## 许可证
 
