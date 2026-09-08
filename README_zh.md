@@ -1,3 +1,4 @@
+[English README](README.md)
 # eGPS v2（eGPS2）— 最终发布集合
 
 本目录用于 **eGPS2 平台的最终发布**（Release Collection）。
@@ -6,13 +7,14 @@
 
 请前往 [Releases 页面](https://github.com/yudalang3/eGPS_v2/releases)下载发布版本。
 
-[English README](README.md)
 
 ## eGPS2 是什么？
 
 **eGPS（The evolutionary Genotype Phenotype System Biology）** 是一个模块化的生物信息学软件平台。
 
 本仓库/目录将 eGPS2 的核心框架与多个应用/工具模块进行汇总，用于发布一个对非技术用户更友好的 **最终可用软件包**。
+
+我们已经于2019年发表了 eGPS  v1版本，具体见 http://www.egps-software.net/
 
 ## 给不熟悉命令行的用户（推荐）
 
@@ -54,6 +56,8 @@ graph TD
 - `egps-mutationPre`：基因组突变展示（依赖于 egps-pathway.evol.browser）
 
 当然您也可以在 `egps-pathway.evol.browser` 这些上层的模块基础上进行项目开发，因为eGPS2的所有功能模块都是开源的。
+
+这里展示在此处，是作为一个示例，表示eGPS有作为框架的能力。
 
 ## 给开发者（可选）
 

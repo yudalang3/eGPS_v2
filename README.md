@@ -1,3 +1,4 @@
+[中文版 README](README_zh.md)
 # eGPS v2 (eGPS2) — Final Release Collection
 
 This folder is the **final release workspace** for the eGPS2 software platform.
@@ -6,13 +7,14 @@ If you are an end user and not familiar with the terminal, you do **not** need t
 
 Go to [Releases](https://github.com/yudalang3/eGPS_v2/releases) to download.
 
-[中文版 README](README_zh.md)
 
 ## What is eGPS2?
 
 **eGPS (The evolutionary Genotype Phenotype System Biology)** is a modular bioinformatics software platform.
 
 This repository area collects the core framework and a set of applications/tools, so we can publish a **single, end-user-friendly** final software package.
+
+We published the eGPS v1 version in 2019; see http://www.egps-software.net/ for details.
 
 ## For end users (recommended)
 
@@ -54,6 +56,8 @@ There are also two **independent plugins** — they are **not** part of the eGPS
 - `egps-mutationPre`: genomic mutation presenter (depends on egps-pathway.evol.browser)
 
 Of course, you can also develop your own projects on top of the upper-level modules (e.g. `egps-pathway.evol.browser`) because the eGPS2 functional modules are open sourced.
+
+They are shown here as examples, demonstrating that eGPS can serve as a framework.
 
 ## For developers (optional)
 
