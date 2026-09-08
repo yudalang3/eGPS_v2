@@ -25,40 +25,33 @@ Notes:
 
 ## What is included here?
 
-Main stream modules (typical dependency order):
+**The core of eGPS v2 is `egps-base` and `egps-shell`**: `egps-base` provides base utilities and infrastructure (open source); `egps-shell` is the GUI shell framework hosting desktop modules, including the mainframe source code (open source). On top of the core, the release bundle **ships the following modules**:
 
-- `egps-base`: base utilities and infrastructure (open source)
-- `egps-shell`: the GUI shell framework hosting desktop modules, including the mainframe source code (open source)
-- `egps-pathway.evol.browser`: application module (Pathway Evolution Browser)
 - `egps-SeqTools` (SeqTools): biological sequence analysis tools and workflow modules
-
-Their dependencies are shown below. In both diagrams, arrows point from a base module to an upper-level module that depends on it:
-
-```mermaid
-graph TD
-  base[egps-base] --> shell["egps-shell (GUI mainframe)"]
-  shell --> pe[egps-pathway.evol.browser]
-  shell --> seq[egps-SeqTools]
-```
-
-Other standalone application modules in this collection (examples):
-
-- `egps-mutationPre`: genomic mutation presenter (depends on egps-pathway.evol.browser)
 - `egps-sanky-venn`: Sankey plot and Venn plot (merged module)
 - `egps-heatmap`: heatmap plot
 - `egps-chorddiagram`: chord diagram
 
-Most of these modules are at the same level as `egps-pathway.evol.browser` / `egps-SeqTools`, except `egps-mutationPre` which depends on `egps-pathway.evol.browser`.
+Their dependencies are shown below. The **dashed box** marks what ships inside the eGPS v2 release bundle; solid arrows point from a base module to an upper-level module that depends on it:
 
 ```mermaid
 graph TD
-  shell["egps-shell (GUI mainframe)"] --> pe[egps-pathway.evol.browser]
-  shell --> seq[egps-SeqTools]
-  pe --> mut[egps-mutationPre]
-  shell --> sankyvenn[egps-sanky-venn]
-  shell --> heat[egps-heatmap]
-  shell --> chord[egps-chorddiagram]
+  subgraph bundle["eGPS v2 (release bundle)"]
+    base[egps-base] --> shell["egps-shell (GUI mainframe)"]
+    shell --> seq[egps-SeqTools]
+    shell --> sankyvenn[egps-sanky-venn]
+    shell --> heat[egps-heatmap]
+    shell --> chord[egps-chorddiagram]
+  end
+  shell -.->|independent plugin| pe[egps-pathway.evol.browser]
+  pe -.->|independent plugin| mut[egps-mutationPre]
+  style bundle fill:#f8f8f8,stroke:#999,stroke-dasharray:6 4
 ```
+
+There are also two **independent plugins** — they are **not** part of the eGPS v2 release bundle and can be installed separately as optional extensions (shown outside the dashed box, connected by dashed arrows):
+
+- `egps-pathway.evol.browser`: application module (Pathway Evolution Browser), the template for other application modules
+- `egps-mutationPre`: genomic mutation presenter (depends on egps-pathway.evol.browser)
 
 Of course, you can also develop your own projects on top of the upper-level modules (e.g. `egps-pathway.evol.browser`) because the eGPS2 functional modules are open sourced.
 

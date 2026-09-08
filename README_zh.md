@@ -25,40 +25,33 @@
 
 ## 这里包含哪些内容？
 
-主干模块（典型依赖顺序）：
+**eGPS v2 的本质核心是 `egps-base` 与 `egps-shell`**：`egps-base` 提供基础工具与核心基础设施（开源）；`egps-shell` 是承载桌面模块的 GUI 壳框架，包含主框架源代码（开源）。发布包在核心之外还**自带**以下功能模块：
 
-- `egps-base`：基础工具与核心基础设施（开源）
-- `egps-shell`：承载桌面模块的 GUI 壳框架，包含主框架源代码（开源）
-- `egps-pathway.evol.browser`：应用模块（Pathway Evolution Browser）
 - `egps-SeqTools`（SeqTools）：生物序列分析工具与工作流模块集合
-
-它们的依赖关系如下（以下两张图的箭头均由基础模块指向依赖它的上层模块）：
-
-```mermaid
-graph TD
-  base[egps-base] --> shell["egps-shell（包含GUI主框架）"]
-  shell --> pe[egps-pathway.evol.browser]
-  shell --> seq[egps-SeqTools]
-```
-
-本集合中的其他独立应用模块（示例）：
-
-- `egps-mutationPre`：基因组突变展示（依赖于 egps-pathway.evol.browser）
 - `egps-sanky-venn`：桑基图与 Venn 图（合并模块）
 - `egps-heatmap`：热图
 - `egps-chorddiagram`：弦图
 
-这些模块大部分和`egps-pathway.evol.browser`/`egps-SeqTools` 平级，但 `egps-mutationPre` 依赖于 `egps-pathway.evol.browser`。
+它们的依赖关系如下（**虚线框内即 eGPS v2 发布包自带的内容**；实线箭头由基础模块指向依赖它的上层模块）：
 
 ```mermaid
 graph TD
-  shell["egps-shell（GUI主框架）"] --> pe[egps-pathway.evol.browser]
-  shell --> seq[egps-SeqTools]
-  pe --> mut[egps-mutationPre]
-  shell --> sankyvenn[egps-sanky-venn]
-  shell --> heat[egps-heatmap]
-  shell --> chord[egps-chorddiagram]
+  subgraph bundle["eGPS v2（发布包自带）"]
+    base[egps-base] --> shell["egps-shell（GUI主框架）"]
+    shell --> seq[egps-SeqTools]
+    shell --> sankyvenn[egps-sanky-venn]
+    shell --> heat[egps-heatmap]
+    shell --> chord[egps-chorddiagram]
+  end
+  shell -.->|独立插件| pe[egps-pathway.evol.browser]
+  pe -.->|独立插件| mut[egps-mutationPre]
+  style bundle fill:#f8f8f8,stroke:#999,stroke-dasharray:6 4
 ```
+
+此外还有两个**独立插件**——它们**不属于** eGPS v2 发布包，可作为可选扩展另行安装（图中位于虚线框外，以虚线箭头表示）：
+
+- `egps-pathway.evol.browser`：应用模块（Pathway Evolution Browser），其他应用模块的模板
+- `egps-mutationPre`：基因组突变展示（依赖于 egps-pathway.evol.browser）
 
 当然您也可以在 `egps-pathway.evol.browser` 这些上层的模块基础上进行项目开发，因为eGPS2的所有功能模块都是开源的。
 
